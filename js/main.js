@@ -1,22 +1,3 @@
-//<검색하기 버튼 js>
-const searchEl = document.querySelector('.search');
-
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function () {
-    searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function () {
-    searchEl.classList.add('focused');
-    searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function () {
-    searchEl.classList.remove('focused');
-    searchInputEl.setAttribute('placeholder', '');
-});
-
 // <오른쪽 상단 배지 부분 js> & <to-top 기능>
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
@@ -157,8 +138,3 @@ spyEls.forEach(function (spyEl) {
         .setClassToggle(spyEl, 'show') // (토글할 인수 , 토글할 클래스의 이름)
         .addTo(new ScrollMagic.Controller()); //실제로 동작하도록 함. 
 });
-
-
-// 올해가 몇년도인지
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();
